@@ -109,6 +109,7 @@
 				045AFEFA299A350100E49817 /* Model */,
 				045AFEF7299A347F00E49817 /* DefaultMain */,
 				045AFEF8299A34DB00E49817 /* View */,
+				045AFF0E299A778900E49817 /* Resources */,
 			);
 			path = TennisKata;
 			sourceTree = "<group>";
@@ -135,9 +136,6 @@
 			children = (
 				045AFEC5299A200E00E49817 /* AppDelegate.swift */,
 				045AFEC7299A200E00E49817 /* SceneDelegate.swift */,
-				045AFED0299A201100E49817 /* LaunchScreen.storyboard */,
-				045AFECB299A200E00E49817 /* Main.storyboard */,
-				045AFECE299A201100E49817 /* Assets.xcassets */,
 				045AFED3299A201100E49817 /* Info.plist */,
 			);
 			path = DefaultMain;
@@ -166,6 +164,16 @@
 				045AFF0C299A72B400E49817 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		045AFF0E299A778900E49817 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				045AFECB299A200E00E49817 /* Main.storyboard */,
+				045AFECE299A201100E49817 /* Assets.xcassets */,
+				045AFED0299A201100E49817 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

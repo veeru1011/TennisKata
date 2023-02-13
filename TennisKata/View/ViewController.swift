@@ -10,28 +10,19 @@ import Combine
 
 class ViewController: UIViewController {
 
+    ///@IBOutlet
     @IBOutlet weak var scoreLabel : UILabel!
     
-    //MARK: - ViewModel
+    ///View Model
     private var viewModel : MainHomeViewModel! = nil
     private var bindings = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = MainHomeViewModel(firstPlayerName: "Player 1", secondPlayerName: "Player 2")
-        viewModel.$scoreMessage.receive(on: DispatchQueue.main).sink { [weak self] message in
-            self?.scoreLabel.text = message
-        }.store(in: &bindings)
-        
-        viewModel.$gameState.receive(on: DispatchQueue.main).sink { [weak self] state in
-            if state == .ended {
-                self?.showWinnerAlert()
-            }
-        }.store(in: &bindings)
-        
-        viewModel.startGame()
+        self.setUpViewModel()
     }
 
+    // MARK: - IBAction
     @IBAction func firstPlayerScores(_ sender: Any) {
         if !self.isGameEnded() {
             viewModel.firstPlayerScores()
@@ -43,6 +34,8 @@ class ViewController: UIViewController {
             viewModel.secondPlayerScores()
         }
     }
+    
+    // MARK: - Helper functions
     
     private func isGameEnded() -> Bool {
         if viewModel.gameState == .ended {
@@ -66,6 +59,21 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    ///Set Up ViewModel
+    func setUpViewModel() {
+        viewModel = MainHomeViewModel(firstPlayerName: "Player 1", secondPlayerName: "Player 2")
+        viewModel.$scoreMessage.receive(on: DispatchQueue.main).sink { [weak self] message in
+            self?.scoreLabel.text = message
+        }.store(in: &bindings)
+        
+        viewModel.$gameState.receive(on: DispatchQueue.main).sink { [weak self] state in
+            if state == .ended {
+                self?.showWinnerAlert()
+            }
+        }.store(in: &bindings)
+        
+        viewModel.startGame()
+    }
 }
 

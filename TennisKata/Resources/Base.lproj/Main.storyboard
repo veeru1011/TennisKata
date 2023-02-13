@@ -16,34 +16,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GG-JZ-8ig">
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjt-f0-4fd">
-                                <rect key="frame" x="57" y="148" width="300" height="44"/>
+                                <rect key="frame" x="20" y="148" width="374" height="44"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.19200000170000001" blue="0.1959999949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Wul-Mh-bO5"/>
-                                    <constraint firstAttribute="width" constant="300" id="hQP-ga-vcd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Tap to Score for Player 1">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="firstPlayerScores:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y2C-tt-lOp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcZ-D2-3Dh">
-                                <rect key="frame" x="57" y="694" width="300" height="44"/>
+                                <rect key="frame" x="20" y="694" width="374" height="44"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.19200000170000001" blue="0.1959999949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Gyb-a3-3m6"/>
-                                    <constraint firstAttribute="width" constant="300" id="ajm-m2-hvj"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Tap to Score for Player 2">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="secondPlayerScorers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RFl-oa-NT7"/>
                                 </connections>
@@ -60,30 +80,61 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBS-re-EsC">
-                                <rect key="frame" x="10" y="418" width="394" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQg-dD-ZOU">
+                                <rect key="frame" x="20" y="405" width="374" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~ Score ~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mST-hi-1ek">
+                                        <rect key="frame" x="142.5" y="10" width="89.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love All " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBS-re-EsC">
+                                        <rect key="frame" x="20" y="42" width="334" height="24"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Lup-Gx-gda"/>
+                                    <constraint firstItem="mST-hi-1ek" firstAttribute="centerX" secondItem="uQg-dD-ZOU" secondAttribute="centerX" id="JhO-s9-CuD"/>
+                                    <constraint firstItem="mST-hi-1ek" firstAttribute="top" secondItem="uQg-dD-ZOU" secondAttribute="top" constant="10" id="OAE-AO-PHj"/>
+                                    <constraint firstAttribute="trailing" secondItem="TBS-re-EsC" secondAttribute="trailing" constant="20" id="OeJ-lH-mpp"/>
+                                    <constraint firstItem="TBS-re-EsC" firstAttribute="leading" secondItem="uQg-dD-ZOU" secondAttribute="leading" constant="20" id="UeC-V2-AqU"/>
+                                    <constraint firstAttribute="bottom" secondItem="TBS-re-EsC" secondAttribute="bottom" constant="20" id="kQd-Rq-qbO"/>
+                                    <constraint firstItem="TBS-re-EsC" firstAttribute="top" secondItem="mST-hi-1ek" secondAttribute="bottom" constant="8" id="qx7-Yy-eWD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBS-re-EsC" secondAttribute="trailing" constant="10" id="5v2-by-3Un"/>
+                            <constraint firstItem="uQg-dD-ZOU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="1xK-u9-Oim"/>
+                            <constraint firstItem="5GG-JZ-8ig" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="2si-do-tMb"/>
+                            <constraint firstItem="uQg-dD-ZOU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="33x-4e-2n0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5GG-JZ-8ig" secondAttribute="bottom" constant="10" id="8Mn-jL-7Hq"/>
                             <constraint firstItem="Bhh-85-Eep" firstAttribute="top" secondItem="jcZ-D2-3Dh" secondAttribute="bottom" constant="25" id="CSE-Kq-A6L"/>
+                            <constraint firstAttribute="trailing" secondItem="uQg-dD-ZOU" secondAttribute="trailing" constant="20" id="DtE-y7-FCs"/>
+                            <constraint firstItem="jcZ-D2-3Dh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FW2-QN-XFj"/>
                             <constraint firstItem="nOz-fy-5ao" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Go7-mS-zs8"/>
-                            <constraint firstItem="TBS-re-EsC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="HLp-NM-4BG"/>
                             <constraint firstItem="mjt-f0-4fd" firstAttribute="top" secondItem="nOz-fy-5ao" secondAttribute="bottom" constant="25" id="Ibe-b5-jUg"/>
-                            <constraint firstItem="TBS-re-EsC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TNe-ul-THp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mjt-f0-4fd" secondAttribute="trailing" constant="20" id="NIs-Ih-9gL"/>
                             <constraint firstItem="jcZ-D2-3Dh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vei-9O-rpT"/>
                             <constraint firstItem="mjt-f0-4fd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XBR-I3-UoW"/>
-                            <constraint firstItem="TBS-re-EsC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fVd-Jj-DJP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jcZ-D2-3Dh" secondAttribute="trailing" constant="20" id="d5Y-eh-dVW"/>
+                            <constraint firstItem="5GG-JZ-8ig" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dHg-Cj-FGf"/>
                             <constraint firstItem="Bhh-85-Eep" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="knD-Xo-CK7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5GG-JZ-8ig" secondAttribute="trailing" constant="10" id="qSi-st-D2B"/>
+                            <constraint firstItem="mjt-f0-4fd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qkr-uN-bjJ"/>
+                            <constraint firstItem="uQg-dD-ZOU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sC0-YK-FRg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bhh-85-Eep" secondAttribute="bottom" constant="70" id="wuC-8i-peM"/>
                             <constraint firstItem="nOz-fy-5ao" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="yob-Wa-4ID"/>
                         </constraints>
