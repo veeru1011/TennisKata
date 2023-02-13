@@ -16,6 +16,8 @@
 		045AFEDD299A201100E49817 /* TennisKataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEDC299A201100E49817 /* TennisKataTests.swift */; };
 		045AFEE7299A201100E49817 /* TennisKataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEE6299A201100E49817 /* TennisKataUITests.swift */; };
 		045AFEE9299A201100E49817 /* TennisKataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEE8299A201100E49817 /* TennisKataUITestsLaunchTests.swift */; };
+		045AFEFC299A351C00E49817 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEFB299A351C00E49817 /* Player.swift */; };
+		045AFF00299A388500E49817 /* Tennis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEFF299A388500E49817 /* Tennis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		045AFEE2299A201100E49817 /* TennisKataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisKataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		045AFEE6299A201100E49817 /* TennisKataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisKataUITests.swift; sourceTree = "<group>"; };
 		045AFEE8299A201100E49817 /* TennisKataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisKataUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		045AFEFB299A351C00E49817 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		045AFEFF299A388500E49817 /* Tennis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tennis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,9 @@
 		045AFEC4299A200E00E49817 /* TennisKata */ = {
 			isa = PBXGroup;
 			children = (
-				045AFEC5299A200E00E49817 /* AppDelegate.swift */,
-				045AFEC7299A200E00E49817 /* SceneDelegate.swift */,
-				045AFEC9299A200E00E49817 /* ViewController.swift */,
-				045AFECB299A200E00E49817 /* Main.storyboard */,
-				045AFECE299A201100E49817 /* Assets.xcassets */,
-				045AFED0299A201100E49817 /* LaunchScreen.storyboard */,
-				045AFED3299A201100E49817 /* Info.plist */,
+				045AFEFA299A350100E49817 /* Model */,
+				045AFEF7299A347F00E49817 /* DefaultMain */,
+				045AFEF8299A34DB00E49817 /* View */,
 			);
 			path = TennisKata;
 			sourceTree = "<group>";
@@ -125,6 +125,36 @@
 				045AFEE8299A201100E49817 /* TennisKataUITestsLaunchTests.swift */,
 			);
 			path = TennisKataUITests;
+			sourceTree = "<group>";
+		};
+		045AFEF7299A347F00E49817 /* DefaultMain */ = {
+			isa = PBXGroup;
+			children = (
+				045AFEC5299A200E00E49817 /* AppDelegate.swift */,
+				045AFEC7299A200E00E49817 /* SceneDelegate.swift */,
+				045AFED0299A201100E49817 /* LaunchScreen.storyboard */,
+				045AFECB299A200E00E49817 /* Main.storyboard */,
+				045AFECE299A201100E49817 /* Assets.xcassets */,
+				045AFED3299A201100E49817 /* Info.plist */,
+			);
+			path = DefaultMain;
+			sourceTree = "<group>";
+		};
+		045AFEF8299A34DB00E49817 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				045AFEC9299A200E00E49817 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		045AFEFA299A350100E49817 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				045AFEFB299A351C00E49817 /* Player.swift */,
+				045AFEFF299A388500E49817 /* Tennis.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045AFF00299A388500E49817 /* Tennis.swift in Sources */,
 				045AFECA299A200E00E49817 /* ViewController.swift in Sources */,
+				045AFEFC299A351C00E49817 /* Player.swift in Sources */,
 				045AFEC6299A200E00E49817 /* AppDelegate.swift in Sources */,
 				045AFEC8299A200E00E49817 /* SceneDelegate.swift in Sources */,
 			);
@@ -440,7 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TennisKata/Info.plist;
+				INFOPLIST_FILE = TennisKata/DefaultMain/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -467,7 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TennisKata/Info.plist;
+				INFOPLIST_FILE = TennisKata/DefaultMain/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
