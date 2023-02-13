@@ -18,4 +18,8 @@ struct Player {
     mutating func updateScore() {
         self.score += 1
     }
+    
+    mutating func resetScore() {
+        self.score = 0
+    }
 }

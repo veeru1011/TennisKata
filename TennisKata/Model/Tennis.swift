@@ -7,22 +7,37 @@
 
 import Foundation
 
+enum GameState {
+    case notStarted
+    case playing
+    case ended
+}
+
 public class Tennis {
     
     private var firstPlayer : Player
     private var secondPlayer : Player
+    
+    var gameState : GameState = .notStarted
     
     init(firstPlayerName: String, secondPlayerName: String) {
         firstPlayer = Player(name: firstPlayerName)
         secondPlayer = Player(name: secondPlayerName)
     }
     
+    func resetGame() {
+        firstPlayer.resetScore()
+        secondPlayer.resetScore()
+        gameState = .notStarted
+    }
+    
     public func  getScore() -> String {
         
         if (gameHasWinner()) {
+            gameState = .ended
             return leadingScorer() + " wins"
         }
-        
+        gameState = .playing
         if (scoreAtAdvantage()) {
             return leadingScorer() + " on Advantage"
         }

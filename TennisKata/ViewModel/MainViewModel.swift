@@ -9,17 +9,20 @@ import Foundation
 import Combine
 
 protocol PlayerAction {
-    func playerOneScores()
-    func playerTwoScores()
+    func firstPlayerScores()
+    func secondPlayerScores()
+    func startGame()
+    func getScore() -> String
 }
 
 final class MainHomeViewModel : ObservableObject {
     
     @Published private(set) var scoreMessage: String?
+    @Published private(set) var gameState: GameState = .notStarted
     var game : Tennis
     //MARK: - Initilizer
-    init(playerOneName: String, playerTwoName: String) {
-        self.game  = Tennis(playerOneName: playerOneName, playerTwoName: playerTwoName)
+    init(firstPlayerName: String, secondPlayerName: String) {
+        self.game  = Tennis(firstPlayerName: firstPlayerName, secondPlayerName: secondPlayerName)
     }
     init(game: Tennis) {
         self.game  = game
@@ -27,11 +30,25 @@ final class MainHomeViewModel : ObservableObject {
 }
 
 extension MainHomeViewModel: PlayerAction {
-    public func playerOneScores() {
-        game.playerOneScores()
+    func firstPlayerScores() {
+        game.firstPlayerScores()
+        scoreMessage = game.getScore()
+        gameState = game.gameState
     }
     
-    public func playerTwoScores() {
-        game.playerTwoScores()
+    func secondPlayerScores() {
+        game.secondPlayerScores()
+        scoreMessage = game.getScore()
+        gameState = game.gameState
+    }
+    
+    func startGame() {
+        game.resetGame()
+        scoreMessage = game.getScore()
+        gameState = game.gameState
+    }
+    
+    func getScore() -> String {
+        return self.scoreMessage ?? ""
     }
 }

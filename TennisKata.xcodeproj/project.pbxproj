@@ -18,6 +18,7 @@
 		045AFEE9299A201100E49817 /* TennisKataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEE8299A201100E49817 /* TennisKataUITestsLaunchTests.swift */; };
 		045AFEFC299A351C00E49817 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEFB299A351C00E49817 /* Player.swift */; };
 		045AFF00299A388500E49817 /* Tennis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFEFF299A388500E49817 /* Tennis.swift */; };
+		045AFF0D299A72B400E49817 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AFF0C299A72B400E49817 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		045AFEE8299A201100E49817 /* TennisKataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisKataUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		045AFEFB299A351C00E49817 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		045AFEFF299A388500E49817 /* Tennis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tennis.swift; sourceTree = "<group>"; };
+		045AFF0C299A72B400E49817 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		045AFEC4299A200E00E49817 /* TennisKata */ = {
 			isa = PBXGroup;
 			children = (
+				045AFF0B299A72A300E49817 /* ViewModel */,
 				045AFEFA299A350100E49817 /* Model */,
 				045AFEF7299A347F00E49817 /* DefaultMain */,
 				045AFEF8299A34DB00E49817 /* View */,
@@ -155,6 +158,14 @@
 				045AFEFF299A388500E49817 /* Tennis.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		045AFF0B299A72A300E49817 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				045AFF0C299A72B400E49817 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				045AFEFC299A351C00E49817 /* Player.swift in Sources */,
 				045AFEC6299A200E00E49817 /* AppDelegate.swift in Sources */,
 				045AFEC8299A200E00E49817 /* SceneDelegate.swift in Sources */,
+				045AFF0D299A72B400E49817 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

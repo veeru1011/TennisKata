@@ -10,7 +10,14 @@ import XCTest
 
 class TennisKataTests: XCTestCase {
     
-    var game = Tennis(firstPlayerName: "Player 1", secondPlayerName: "Player 2")
+    var viewModel : MainHomeViewModel!
+    
+    override func setUp() {
+        super.setUp()
+        let game = Tennis(firstPlayerName: "Player 1", secondPlayerName: "Player 2")
+        viewModel = MainHomeViewModel(game: game)
+        viewModel.startGame()
+    }
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,139 +28,125 @@ class TennisKataTests: XCTestCase {
     }
     
     func testNewGameShouldReturnLoveAll() throws {
-        let score : String  = game.getScore()
+        let score : String  = viewModel.getScore()
         XCTAssertEqual("Love all",score)
     }
     
     func testFirstPlayerScoreFirst() throws {
-        game.firstPlayerScores()
-        let score = game.getScore()
+        viewModel.firstPlayerScores()
+        let score = viewModel.getScore()
         XCTAssertEqual("15,Love", score)
     }
     
     func testSecondPlayerScoreAfterFirstPlayer() throws {
-        game.firstPlayerScores()
-        var score = game.getScore()
+        viewModel.firstPlayerScores()
+        var score = viewModel.getScore()
         XCTAssertEqual("15,Love", score)
-        game.secondPlayerScores()
-        score = game.getScore()
+        viewModel.secondPlayerScores()
+        score = viewModel.getScore()
         XCTAssertEqual("15 all", score)
     }
     
     func testFirstPlayerWinFirstTwoBalls() throws {
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        let score = game.getScore()
+        createScore(2, 0)
+        let score = viewModel.getScore()
         XCTAssertEqual("30,Love", score)
     }
     
     func testFirstPlayerFirstThreeBalls() throws {
-        game.firstPlayerScores()
-        var score = game.getScore()
+        viewModel.firstPlayerScores()
+        var score = viewModel.getScore()
         XCTAssertEqual("15,Love", score)
-        game.firstPlayerScores()
-        score = game.getScore()
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
         XCTAssertEqual("30,Love", score)
-        game.firstPlayerScores()
-        score = game.getScore()
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
         XCTAssertEqual("40,Love", score)
     }
     
     func testBothAreOnThirty() throws {
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        let score = game.getScore()
+        createScore(2, 2)
+        let score = viewModel.getScore()
         XCTAssertEqual("30 all", score)
     }
     
     func testPlayesOnDeuce() throws {
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        let score = game.getScore()
+        createScore(3, 3)
+        let score = viewModel.getScore()
         XCTAssertEqual("Deuce", score)
     }
     
     func testFirstPlayerWins() throws {
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        let score = game.getScore()
+        createScore(4, 0)
+        viewModel.firstPlayerScores()
+        viewModel.firstPlayerScores()
+        viewModel.firstPlayerScores()
+        viewModel.firstPlayerScores()
+        let score = viewModel.getScore()
         XCTAssertEqual("Player 1 wins", score)
     }
     
     func testSecondPlayerWins() throws {
-        game.firstPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        let score = game.getScore()
+        createScore(1, 4)
+        let score = viewModel.getScore()
         XCTAssertEqual("Player 2 wins", score)
     }
     
-    func testPlayesOnDeuceAgain() throws {
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        var score = game.getScore()
+    func testPlayersOnDeuceAgain() throws {
+        createScore(3, 3)
+        var score = viewModel.getScore()
         XCTAssertEqual("Deuce", score)
-        game.firstPlayerScores()
-        score = game.getScore()
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
         XCTAssertEqual("Player 1 on Advantage", score)
-        game.secondPlayerScores()
-        score = game.getScore()
+        viewModel.secondPlayerScores()
+        score = viewModel.getScore()
         XCTAssertEqual("Deuce", score)
     }
     
     func testSecondPlayerWinsAfterAdvantage() {
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        
-        let score = game.getScore();
+        createScore(3, 3)
+        var score = viewModel.getScore()
+        XCTAssertEqual("Deuce", score)
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
+        XCTAssertEqual("Player 1 on Advantage", score)
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
         XCTAssertEqual("Player 1 wins", score)
     }
-       
+    
     func testFirstPlayerWinsAfterAdvantage() {
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        game.firstPlayerScores()
-        
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        game.secondPlayerScores()
-        
-        let score = game.getScore();
+        createScore(3, 3)
+        var score = viewModel.getScore()
+        XCTAssertEqual("Deuce", score)
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
+        XCTAssertEqual("Player 1 on Advantage", score)
+        viewModel.secondPlayerScores()
+        score = viewModel.getScore()
+        XCTAssertEqual("Deuce", score)
+        viewModel.secondPlayerScores()
+        score = viewModel.getScore()
+        XCTAssertEqual("Player 2 on Advantage", score)
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
+        XCTAssertEqual("Deuce", score)
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
+        XCTAssertEqual("Player 1 on Advantage", score)
+        viewModel.firstPlayerScores()
+        score = viewModel.getScore()
         XCTAssertEqual("Player 1 wins", score)
+    }
+    
+    private func  createScore(_ p1Balls : Int, _ p2Balls : Int) {
+        for _ in  0..<p1Balls {
+            viewModel.firstPlayerScores()
+        }
+        for _ in  0..<p2Balls {
+            viewModel.secondPlayerScores()
+        }
     }
 }
